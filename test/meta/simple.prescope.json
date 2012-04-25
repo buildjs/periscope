@@ -1,0 +1,83 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "a"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "a1"
+        },
+        {
+          "type": "Identifier",
+          "name": "a2"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "aonly"
+                },
+                "init": {
+                  "type": "Literal",
+                  "value": 5
+                }
+              }
+            ],
+            "kind": "var"
+          }
+        ]
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "b"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "b1"
+        },
+        {
+          "type": "Identifier",
+          "name": "b2"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "bonly"
+                },
+                "init": {
+                  "type": "Literal",
+                  "value": 10
+                }
+              }
+            ],
+            "kind": "var"
+          }
+        ]
+      }
+    }
+  ]
+}

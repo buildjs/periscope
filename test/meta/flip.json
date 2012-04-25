@@ -1,0 +1,5461 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "_flippers"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": []
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "reTrailingExtension"
+          },
+          "init": {
+            "type": "Literal",
+            "value": {}
+          }
+        },
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "reLeadingDot"
+          },
+          "init": {
+            "type": "Literal",
+            "value": {}
+          }
+        },
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "reLeadingHash"
+          },
+          "init": {
+            "type": "Literal",
+            "value": {}
+          }
+        },
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "convertedUrls"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": []
+          }
+        },
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "reValidAttr"
+          },
+          "init": {
+            "type": "Literal",
+            "value": {}
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "_eventPass"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "results"
+        },
+        {
+          "type": "Identifier",
+          "name": "promises"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "valid"
+                },
+                "init": {
+                  "type": "LogicalExpression",
+                  "operator": "&&",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "results"
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "results"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "length"
+                    }
+                  }
+                }
+              }
+            ],
+            "kind": "var"
+          },
+          {
+            "type": "ForStatement",
+            "init": {
+              "type": "VariableDeclaration",
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "ii"
+                  },
+                  "init": {
+                    "type": "Literal",
+                    "value": 0
+                  }
+                }
+              ],
+              "kind": "var"
+            },
+            "test": {
+              "type": "LogicalExpression",
+              "operator": "&&",
+              "left": {
+                "type": "Identifier",
+                "name": "valid"
+              },
+              "right": {
+                "type": "BinaryExpression",
+                "operator": "<",
+                "left": {
+                  "type": "Identifier",
+                  "name": "ii"
+                },
+                "right": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "results"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "length"
+                  }
+                }
+              }
+            },
+            "update": {
+              "type": "UpdateExpression",
+              "operator": "++",
+              "argument": {
+                "type": "Identifier",
+                "name": "ii"
+              },
+              "prefix": false
+            },
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "BinaryExpression",
+                    "operator": "!=",
+                    "left": {
+                      "type": "UnaryExpression",
+                      "operator": "typeof",
+                      "argument": {
+                        "type": "MemberExpression",
+                        "computed": true,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "results"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "ii"
+                        }
+                      }
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": "undefined"
+                    }
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "AssignmentExpression",
+                          "operator": "=",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "valid"
+                          },
+                          "right": {
+                            "type": "LogicalExpression",
+                            "operator": "&&",
+                            "left": {
+                              "type": "Identifier",
+                              "name": "valid"
+                            },
+                            "right": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "results"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "ii"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "promises"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "push"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "results"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "ii"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "scope": [
+                      "Flipper",
+                      "Route",
+                      "_eventPass",
+                      "_flippers",
+                      "_getTargetUrl",
+                      "_makeTapHandler",
+                      "_urlToPageName",
+                      "_whenOk",
+                      "convertedUrls",
+                      "flip",
+                      "ii",
+                      "promises",
+                      "reLeadingDot",
+                      "reLeadingHash",
+                      "reTrailingExtension",
+                      "reValidAttr",
+                      "results",
+                      "valid"
+                    ]
+                  },
+                  "alternate": null
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "convertedUrls",
+                "flip",
+                "ii",
+                "promises",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr",
+                "results",
+                "valid"
+              ]
+            }
+          },
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "Identifier",
+              "name": "valid"
+            }
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "convertedUrls",
+          "flip",
+          "ii",
+          "promises",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr",
+          "results",
+          "valid"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "convertedUrls",
+        "flip",
+        "promises",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr",
+        "results"
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "_getTargetUrl"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "target"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "LogicalExpression",
+              "operator": "||",
+              "left": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "target"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "getAttribute"
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "href"
+                  }
+                ]
+              },
+              "right": {
+                "type": "Literal",
+                "value": "home"
+              }
+            }
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "convertedUrls",
+          "flip",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr",
+          "target"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "convertedUrls",
+        "flip",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr",
+        "target"
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "_urlToPageName"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "url"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "UnaryExpression",
+              "operator": "!",
+              "argument": {
+                "type": "MemberExpression",
+                "computed": true,
+                "object": {
+                  "type": "Identifier",
+                  "name": "convertedUrls"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "url"
+                }
+              }
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": true,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "convertedUrls"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "url"
+                      }
+                    },
+                    "right": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "url"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "replace"
+                                }
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Identifier",
+                                  "name": "reTrailingExtension"
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": ""
+                                }
+                              ]
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "replace"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": {}
+                            },
+                            {
+                              "type": "Literal",
+                              "value": "."
+                            }
+                          ]
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "replace"
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "Identifier",
+                          "name": "reLeadingDot"
+                        },
+                        {
+                          "type": "Literal",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "convertedUrls",
+                "flip",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr",
+                "url"
+              ]
+            },
+            "alternate": null
+          },
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "MemberExpression",
+              "computed": true,
+              "object": {
+                "type": "Identifier",
+                "name": "convertedUrls"
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "url"
+              }
+            }
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "convertedUrls",
+          "flip",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr",
+          "url"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "convertedUrls",
+        "flip",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr",
+        "url"
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "_makeTapHandler"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "flipper"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "FunctionExpression",
+              "id": null,
+              "params": [
+                {
+                  "type": "Identifier",
+                  "name": "evt"
+                }
+              ],
+              "body": {
+                "type": "BlockStatement",
+                "body": [
+                  {
+                    "type": "VariableDeclaration",
+                    "declarations": [
+                      {
+                        "type": "VariableDeclarator",
+                        "id": {
+                          "type": "Identifier",
+                          "name": "target"
+                        },
+                        "init": {
+                          "type": "LogicalExpression",
+                          "operator": "||",
+                          "left": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "evt"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "target"
+                            }
+                          },
+                          "right": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "evt"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "srcElement"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "VariableDeclarator",
+                        "id": {
+                          "type": "Identifier",
+                          "name": "routeData"
+                        },
+                        "init": null
+                      }
+                    ],
+                    "kind": "var"
+                  },
+                  {
+                    "type": "WhileStatement",
+                    "test": {
+                      "type": "LogicalExpression",
+                      "operator": "&&",
+                      "left": {
+                        "type": "Identifier",
+                        "name": "target"
+                      },
+                      "right": {
+                        "type": "BinaryExpression",
+                        "operator": "==",
+                        "left": {
+                          "type": "UnaryExpression",
+                          "operator": "typeof",
+                          "argument": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "target"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "href"
+                            }
+                          }
+                        },
+                        "right": {
+                          "type": "Literal",
+                          "value": "undefined"
+                        }
+                      }
+                    },
+                    "body": {
+                      "type": "BlockStatement",
+                      "body": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "AssignmentExpression",
+                            "operator": "=",
+                            "left": {
+                              "type": "Identifier",
+                              "name": "target"
+                            },
+                            "right": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "target"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "parentNode"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "scope": [
+                        "Flipper",
+                        "Route",
+                        "_eventPass",
+                        "_flippers",
+                        "_getTargetUrl",
+                        "_makeTapHandler",
+                        "_urlToPageName",
+                        "_whenOk",
+                        "convertedUrls",
+                        "evt",
+                        "flip",
+                        "flipper",
+                        "reLeadingDot",
+                        "reLeadingHash",
+                        "reTrailingExtension",
+                        "reValidAttr",
+                        "routeData",
+                        "target"
+                      ]
+                    }
+                  },
+                  {
+                    "type": "ExpressionStatement",
+                    "expression": {
+                      "type": "AssignmentExpression",
+                      "operator": "=",
+                      "left": {
+                        "type": "Identifier",
+                        "name": "routeData"
+                      },
+                      "right": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "flipper"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "isRoute"
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "target"
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "evt"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "IfStatement",
+                    "test": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "routeData"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "valid"
+                      }
+                    },
+                    "consequent": {
+                      "type": "BlockStatement",
+                      "body": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "evt"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault"
+                              }
+                            },
+                            "arguments": []
+                          }
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "flipper"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "activate"
+                              }
+                            },
+                            "arguments": [
+                              {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "routeData"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "route"
+                                }
+                              },
+                              {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "routeData"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "promises"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "scope": [
+                        "Flipper",
+                        "Route",
+                        "_eventPass",
+                        "_flippers",
+                        "_getTargetUrl",
+                        "_makeTapHandler",
+                        "_urlToPageName",
+                        "_whenOk",
+                        "convertedUrls",
+                        "evt",
+                        "flip",
+                        "flipper",
+                        "reLeadingDot",
+                        "reLeadingHash",
+                        "reTrailingExtension",
+                        "reValidAttr",
+                        "routeData",
+                        "target"
+                      ]
+                    },
+                    "alternate": null
+                  }
+                ],
+                "scope": [
+                  "Flipper",
+                  "Route",
+                  "_eventPass",
+                  "_flippers",
+                  "_getTargetUrl",
+                  "_makeTapHandler",
+                  "_urlToPageName",
+                  "_whenOk",
+                  "convertedUrls",
+                  "evt",
+                  "flip",
+                  "flipper",
+                  "reLeadingDot",
+                  "reLeadingHash",
+                  "reTrailingExtension",
+                  "reValidAttr",
+                  "routeData",
+                  "target"
+                ]
+              },
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "convertedUrls",
+                "evt",
+                "flip",
+                "flipper",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr"
+              ]
+            }
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "convertedUrls",
+          "flip",
+          "flipper",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "convertedUrls",
+        "flip",
+        "flipper",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr"
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "_whenOk"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "eveResults"
+        },
+        {
+          "type": "Identifier",
+          "name": "promises"
+        },
+        {
+          "type": "Identifier",
+          "name": "callback"
+        },
+        {
+          "type": "Identifier",
+          "name": "errback"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "ok"
+                },
+                "init": {
+                  "type": "Literal",
+                  "value": true
+                }
+              }
+            ],
+            "kind": "var"
+          },
+          {
+            "type": "ForStatement",
+            "init": {
+              "type": "VariableDeclaration",
+              "declarations": [
+                {
+                  "type": "VariableDeclarator",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "ii"
+                  },
+                  "init": {
+                    "type": "Literal",
+                    "value": 0
+                  }
+                }
+              ],
+              "kind": "var"
+            },
+            "test": {
+              "type": "LogicalExpression",
+              "operator": "&&",
+              "left": {
+                "type": "Identifier",
+                "name": "eveResults"
+              },
+              "right": {
+                "type": "BinaryExpression",
+                "operator": "<",
+                "left": {
+                  "type": "Identifier",
+                  "name": "ii"
+                },
+                "right": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "eveResults"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "length"
+                  }
+                }
+              }
+            },
+            "update": {
+              "type": "UpdateExpression",
+              "operator": "++",
+              "argument": {
+                "type": "Identifier",
+                "name": "ii"
+              },
+              "prefix": false
+            },
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "ok"
+                    },
+                    "right": {
+                      "type": "LogicalExpression",
+                      "operator": "&&",
+                      "left": {
+                        "type": "Identifier",
+                        "name": "ok"
+                      },
+                      "right": {
+                        "type": "LogicalExpression",
+                        "operator": "||",
+                        "left": {
+                          "type": "BinaryExpression",
+                          "operator": "==",
+                          "left": {
+                            "type": "UnaryExpression",
+                            "operator": "typeof",
+                            "argument": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "eveResults"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "ii"
+                              }
+                            }
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": "undefined"
+                          }
+                        },
+                        "right": {
+                          "type": "MemberExpression",
+                          "computed": true,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "eveResults"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "ii"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "LogicalExpression",
+                    "operator": "&&",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "ok"
+                    },
+                    "right": {
+                      "type": "BinaryExpression",
+                      "operator": "!=",
+                      "left": {
+                        "type": "UnaryExpression",
+                        "operator": "typeof",
+                        "argument": {
+                          "type": "MemberExpression",
+                          "computed": true,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "eveResults"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "ii"
+                          }
+                        }
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": "undefined"
+                      }
+                    }
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "promises"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "push"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "eveResults"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "ii"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "scope": [
+                      "Flipper",
+                      "Route",
+                      "_eventPass",
+                      "_flippers",
+                      "_getTargetUrl",
+                      "_makeTapHandler",
+                      "_urlToPageName",
+                      "_whenOk",
+                      "callback",
+                      "convertedUrls",
+                      "errback",
+                      "eveResults",
+                      "flip",
+                      "ii",
+                      "ok",
+                      "promises",
+                      "reLeadingDot",
+                      "reLeadingHash",
+                      "reTrailingExtension",
+                      "reValidAttr"
+                    ]
+                  },
+                  "alternate": null
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "callback",
+                "convertedUrls",
+                "errback",
+                "eveResults",
+                "flip",
+                "ii",
+                "ok",
+                "promises",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr"
+              ]
+            }
+          },
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "Identifier",
+              "name": "ok"
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "when"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "all"
+                      }
+                    },
+                    "arguments": [
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ArrayExpression",
+                            "elements": []
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "concat"
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "promises"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Identifier",
+                        "name": "callback"
+                      },
+                      {
+                        "type": "Identifier",
+                        "name": "errback"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "callback",
+                "convertedUrls",
+                "errback",
+                "eveResults",
+                "flip",
+                "ii",
+                "ok",
+                "promises",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr"
+              ]
+            },
+            "alternate": null
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "callback",
+          "convertedUrls",
+          "errback",
+          "eveResults",
+          "flip",
+          "ii",
+          "ok",
+          "promises",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "callback",
+        "convertedUrls",
+        "errback",
+        "eveResults",
+        "flip",
+        "promises",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr"
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "Route"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "url"
+        },
+        {
+          "type": "Identifier",
+          "name": "flipper"
+        },
+        {
+          "type": "Identifier",
+          "name": "element"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "sourceData"
+                },
+                "init": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "element"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "dataset"
+                  }
+                }
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "key"
+                },
+                "init": null
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "section"
+                },
+                "init": null
+              }
+            ],
+            "kind": "var"
+          },
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "LogicalExpression",
+              "operator": "||",
+              "left": {
+                "type": "BinaryExpression",
+                "operator": "===",
+                "left": {
+                  "type": "Identifier",
+                  "name": "url"
+                },
+                "right": {
+                  "type": "Literal",
+                  "value": ""
+                }
+              },
+              "right": {
+                "type": "BinaryExpression",
+                "operator": "===",
+                "left": {
+                  "type": "Identifier",
+                  "name": "url"
+                },
+                "right": {
+                  "type": "Literal",
+                  "value": "/"
+                }
+              }
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "url"
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": "home"
+                    }
+                  }
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "convertedUrls",
+                "element",
+                "flip",
+                "flipper",
+                "key",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr",
+                "section",
+                "sourceData",
+                "url"
+              ]
+            },
+            "alternate": null
+          },
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "UnaryExpression",
+              "operator": "!",
+              "argument": {
+                "type": "Identifier",
+                "name": "sourceData"
+              }
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "sourceData"
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "properties": []
+                    }
+                  }
+                },
+                {
+                  "type": "ForInStatement",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "key"
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "element"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "attributes"
+                    }
+                  },
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "IfStatement",
+                        "test": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "reValidAttr"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "test"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Identifier",
+                              "name": "key"
+                            }
+                          ]
+                        },
+                        "consequent": {
+                          "type": "BlockStatement",
+                          "body": [
+                            {
+                              "type": "ExpressionStatement",
+                              "expression": {
+                                "type": "AssignmentExpression",
+                                "operator": "=",
+                                "left": {
+                                  "type": "MemberExpression",
+                                  "computed": true,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "sourceData"
+                                  },
+                                  "property": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "RegExp"
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "$1"
+                                    }
+                                  }
+                                },
+                                "right": {
+                                  "type": "MemberExpression",
+                                  "computed": true,
+                                  "object": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "element"
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "attributes"
+                                    }
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "key"
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "scope": [
+                            "Flipper",
+                            "Route",
+                            "_eventPass",
+                            "_flippers",
+                            "_getTargetUrl",
+                            "_makeTapHandler",
+                            "_urlToPageName",
+                            "_whenOk",
+                            "convertedUrls",
+                            "element",
+                            "flip",
+                            "flipper",
+                            "key",
+                            "reLeadingDot",
+                            "reLeadingHash",
+                            "reTrailingExtension",
+                            "reValidAttr",
+                            "section",
+                            "sourceData",
+                            "url"
+                          ]
+                        },
+                        "alternate": null
+                      }
+                    ],
+                    "scope": [
+                      "Flipper",
+                      "Route",
+                      "_eventPass",
+                      "_flippers",
+                      "_getTargetUrl",
+                      "_makeTapHandler",
+                      "_urlToPageName",
+                      "_whenOk",
+                      "convertedUrls",
+                      "element",
+                      "flip",
+                      "flipper",
+                      "key",
+                      "reLeadingDot",
+                      "reLeadingHash",
+                      "reTrailingExtension",
+                      "reValidAttr",
+                      "section",
+                      "sourceData",
+                      "url"
+                    ]
+                  },
+                  "each": false
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "convertedUrls",
+                "element",
+                "flip",
+                "flipper",
+                "key",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr",
+                "section",
+                "sourceData",
+                "url"
+              ]
+            },
+            "alternate": null
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "data"
+                }
+              },
+              "right": {
+                "type": "ObjectExpression",
+                "properties": []
+              }
+            }
+          },
+          {
+            "type": "ForInStatement",
+            "left": {
+              "type": "Identifier",
+              "name": "key"
+            },
+            "right": {
+              "type": "Identifier",
+              "name": "sourceData"
+            },
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": true,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "data"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "key"
+                      }
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": true,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "sourceData"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "key"
+                      }
+                    }
+                  }
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "convertedUrls",
+                "element",
+                "flip",
+                "flipper",
+                "key",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr",
+                "section",
+                "sourceData",
+                "url"
+              ]
+            },
+            "each": false
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "url"
+                }
+              },
+              "right": {
+                "type": "Identifier",
+                "name": "url"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "regex"
+                }
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "RegExp"
+                },
+                "arguments": [
+                  {
+                    "type": "BinaryExpression",
+                    "operator": "+",
+                    "left": {
+                      "type": "Literal",
+                      "value": "^"
+                    },
+                    "right": {
+                      "type": "Identifier",
+                      "name": "url"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "element"
+                }
+              },
+              "right": {
+                "type": "Identifier",
+                "name": "element"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "pageName"
+                }
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "_urlToPageName"
+                },
+                "arguments": [
+                  {
+                    "type": "Identifier",
+                    "name": "url"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "flipper"
+                }
+              },
+              "right": {
+                "type": "Identifier",
+                "name": "flipper"
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "flipper"
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "on"
+                }
+              },
+              "arguments": [
+                {
+                  "type": "BinaryExpression",
+                  "operator": "+",
+                  "left": {
+                    "type": "Literal",
+                    "value": "flip.to."
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "ThisExpression"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "pageName"
+                    }
+                  }
+                },
+                {
+                  "type": "FunctionExpression",
+                  "id": null,
+                  "params": [],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "Literal",
+                          "value": true
+                        }
+                      }
+                    ],
+                    "scope": [
+                      "Flipper",
+                      "Route",
+                      "_eventPass",
+                      "_flippers",
+                      "_getTargetUrl",
+                      "_makeTapHandler",
+                      "_urlToPageName",
+                      "_whenOk",
+                      "convertedUrls",
+                      "element",
+                      "flip",
+                      "flipper",
+                      "key",
+                      "reLeadingDot",
+                      "reLeadingHash",
+                      "reTrailingExtension",
+                      "reValidAttr",
+                      "section",
+                      "sourceData",
+                      "url"
+                    ]
+                  },
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "convertedUrls",
+                    "element",
+                    "flip",
+                    "flipper",
+                    "key",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr",
+                    "section",
+                    "sourceData",
+                    "url"
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "convertedUrls",
+          "element",
+          "flip",
+          "flipper",
+          "key",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr",
+          "section",
+          "sourceData",
+          "url"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "convertedUrls",
+        "element",
+        "flip",
+        "flipper",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr",
+        "url"
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "Flipper"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "element"
+        },
+        {
+          "type": "Identifier",
+          "name": "opts"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "opts"
+              },
+              "right": {
+                "type": "LogicalExpression",
+                "operator": "||",
+                "left": {
+                  "type": "Identifier",
+                  "name": "opts"
+                },
+                "right": {
+                  "type": "ObjectExpression",
+                  "properties": []
+                }
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "opts"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "title"
+                }
+              },
+              "right": {
+                "type": "LogicalExpression",
+                "operator": "||",
+                "left": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "opts"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "title"
+                  }
+                },
+                "right": {
+                  "type": "Literal",
+                  "value": "Untitled App"
+                }
+              }
+            }
+          },
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "LogicalExpression",
+              "operator": "||",
+              "left": {
+                "type": "BinaryExpression",
+                "operator": "==",
+                "left": {
+                  "type": "UnaryExpression",
+                  "operator": "typeof",
+                  "argument": {
+                    "type": "Identifier",
+                    "name": "element"
+                  }
+                },
+                "right": {
+                  "type": "Literal",
+                  "value": "string"
+                }
+              },
+              "right": {
+                "type": "BinaryExpression",
+                "operator": "instanceof",
+                "left": {
+                  "type": "Identifier",
+                  "name": "element"
+                },
+                "right": {
+                  "type": "Identifier",
+                  "name": "String"
+                }
+              }
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "element"
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": true,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "qsa"
+                        },
+                        "arguments": [
+                          {
+                            "type": "BinaryExpression",
+                            "operator": "+",
+                            "left": {
+                              "type": "Literal",
+                              "value": "#"
+                            },
+                            "right": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "element"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "replace"
+                                }
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Identifier",
+                                  "name": "reLeadingHash"
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": ""
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "property": {
+                        "type": "Literal",
+                        "value": 0
+                      }
+                    }
+                  }
+                }
+              ],
+              "scope": [
+                "Flipper",
+                "Route",
+                "_eventPass",
+                "_flippers",
+                "_getTargetUrl",
+                "_makeTapHandler",
+                "_urlToPageName",
+                "_whenOk",
+                "convertedUrls",
+                "element",
+                "flip",
+                "opts",
+                "reLeadingDot",
+                "reLeadingHash",
+                "reTrailingExtension",
+                "reValidAttr"
+              ]
+            },
+            "alternate": null
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "element"
+                }
+              },
+              "right": {
+                "type": "LogicalExpression",
+                "operator": "||",
+                "left": {
+                  "type": "Identifier",
+                  "name": "element"
+                },
+                "right": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "document"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "body"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "id"
+                }
+              },
+              "right": {
+                "type": "LogicalExpression",
+                "operator": "||",
+                "left": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "ThisExpression"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "element"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "id"
+                  }
+                },
+                "right": {
+                  "type": "BinaryExpression",
+                  "operator": "+",
+                  "left": {
+                    "type": "Literal",
+                    "value": "flipper_"
+                  },
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "NewExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "Date"
+                        },
+                        "arguments": []
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "getTime"
+                      }
+                    },
+                    "arguments": []
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "routes"
+                }
+              },
+              "right": {
+                "type": "ArrayExpression",
+                "elements": []
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "activeRoute"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": null
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "defaultRoute"
+                }
+              },
+              "right": {
+                "type": "Literal",
+                "value": null
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "events"
+                }
+              },
+              "right": {
+                "type": "ObjectExpression",
+                "properties": [
+                  {
+                    "type": "Property",
+                    "key": {
+                      "type": "Identifier",
+                      "name": "activating"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "value": "flip.activating"
+                    },
+                    "kind": "init"
+                  },
+                  {
+                    "type": "Property",
+                    "key": {
+                      "type": "Identifier",
+                      "name": "changed"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "value": "flip.changed"
+                    },
+                    "kind": "init"
+                  },
+                  {
+                    "type": "Property",
+                    "key": {
+                      "type": "Identifier",
+                      "name": "init"
+                    },
+                    "value": {
+                      "type": "Literal",
+                      "value": "flip.init"
+                    },
+                    "kind": "init"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression"
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init"
+                }
+              },
+              "arguments": []
+            }
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "convertedUrls",
+          "element",
+          "flip",
+          "opts",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "convertedUrls",
+        "element",
+        "flip",
+        "opts",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr"
+      ]
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "Flipper"
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "prototype"
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "activate"
+          }
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [
+            {
+              "type": "Identifier",
+              "name": "route"
+            },
+            {
+              "type": "Identifier",
+              "name": "promises"
+            },
+            {
+              "type": "Identifier",
+              "name": "sourceEvent"
+            }
+          ],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "VariableDeclaration",
+                "declarations": [
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "flipper"
+                    },
+                    "init": {
+                      "type": "ThisExpression"
+                    }
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "activated"
+                    },
+                    "init": null
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "activationPromises"
+                    },
+                    "init": {
+                      "type": "ArrayExpression",
+                      "elements": []
+                    }
+                  }
+                ],
+                "kind": "var"
+              },
+              {
+                "type": "IfStatement",
+                "test": {
+                  "type": "LogicalExpression",
+                  "operator": "||",
+                  "left": {
+                    "type": "BinaryExpression",
+                    "operator": "==",
+                    "left": {
+                      "type": "UnaryExpression",
+                      "operator": "typeof",
+                      "argument": {
+                        "type": "Identifier",
+                        "name": "route"
+                      }
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": "string"
+                    }
+                  },
+                  "right": {
+                    "type": "BinaryExpression",
+                    "operator": "instanceof",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "route"
+                    },
+                    "right": {
+                      "type": "Identifier",
+                      "name": "String"
+                    }
+                  }
+                },
+                "consequent": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "Identifier",
+                          "name": "route"
+                        },
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "findRoute"
+                            }
+                          },
+                          "arguments": [
+                            {
+                              "type": "Identifier",
+                              "name": "route"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "activated",
+                    "activationPromises",
+                    "convertedUrls",
+                    "flip",
+                    "flipper",
+                    "promises",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr",
+                    "route",
+                    "sourceEvent"
+                  ]
+                },
+                "alternate": null
+              },
+              {
+                "type": "IfStatement",
+                "test": {
+                  "type": "LogicalExpression",
+                  "operator": "&&",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "route"
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "route"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "element"
+                    }
+                  }
+                },
+                "consequent": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "when"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "all"
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "LogicalExpression",
+                            "operator": "||",
+                            "left": {
+                              "type": "Identifier",
+                              "name": "promises"
+                            },
+                            "right": {
+                              "type": "ArrayExpression",
+                              "elements": []
+                            }
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "Identifier",
+                                      "name": "classtweak"
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": ".flip-active"
+                                      },
+                                      {
+                                        "type": "Literal",
+                                        "value": "-flip-active"
+                                      },
+                                      {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "flipper"
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "element"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "AssignmentExpression",
+                                    "operator": "=",
+                                    "left": {
+                                      "type": "Identifier",
+                                      "name": "activated"
+                                    },
+                                    "right": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "name": "_eventPass"
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "Identifier",
+                                            "name": "eve"
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "MemberExpression",
+                                                "computed": false,
+                                                "object": {
+                                                  "type": "Identifier",
+                                                  "name": "flipper"
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "name": "events"
+                                                }
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "activating"
+                                              }
+                                            },
+                                            {
+                                              "type": "Identifier",
+                                              "name": "flipper"
+                                            },
+                                            {
+                                              "type": "Identifier",
+                                              "name": "route"
+                                            },
+                                            {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "Identifier",
+                                                "name": "flipper"
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "activeRoute"
+                                              }
+                                            },
+                                            {
+                                              "type": "Identifier",
+                                              "name": "sourceEvent"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "Identifier",
+                                          "name": "activationPromises"
+                                        }
+                                      ]
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "when"
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "all"
+                                      }
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "ArrayExpression",
+                                            "elements": [
+                                              {
+                                                "type": "Identifier",
+                                                "name": "activated"
+                                              }
+                                            ]
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "concat"
+                                          }
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Identifier",
+                                            "name": "activationPromises"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "FunctionExpression",
+                                        "id": null,
+                                        "params": [],
+                                        "body": {
+                                          "type": "BlockStatement",
+                                          "body": [
+                                            {
+                                              "type": "ExpressionStatement",
+                                              "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                  "type": "Identifier",
+                                                  "name": "classtweak"
+                                                },
+                                                "arguments": [
+                                                  {
+                                                    "type": "MemberExpression",
+                                                    "computed": false,
+                                                    "object": {
+                                                      "type": "Identifier",
+                                                      "name": "route"
+                                                    },
+                                                    "property": {
+                                                      "type": "Identifier",
+                                                      "name": "element"
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "Literal",
+                                                    "value": "+flip-active"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "type": "ExpressionStatement",
+                                              "expression": {
+                                                "type": "CallExpression",
+                                                "callee": {
+                                                  "type": "Identifier",
+                                                  "name": "eve"
+                                                },
+                                                "arguments": [
+                                                  {
+                                                    "type": "MemberExpression",
+                                                    "computed": false,
+                                                    "object": {
+                                                      "type": "MemberExpression",
+                                                      "computed": false,
+                                                      "object": {
+                                                        "type": "Identifier",
+                                                        "name": "flipper"
+                                                      },
+                                                      "property": {
+                                                        "type": "Identifier",
+                                                        "name": "events"
+                                                      }
+                                                    },
+                                                    "property": {
+                                                      "type": "Identifier",
+                                                      "name": "changed"
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "Identifier",
+                                                    "name": "flipper"
+                                                  },
+                                                  {
+                                                    "type": "Identifier",
+                                                    "name": "route"
+                                                  },
+                                                  {
+                                                    "type": "MemberExpression",
+                                                    "computed": false,
+                                                    "object": {
+                                                      "type": "Identifier",
+                                                      "name": "flipper"
+                                                    },
+                                                    "property": {
+                                                      "type": "Identifier",
+                                                      "name": "activeRoute"
+                                                    }
+                                                  },
+                                                  {
+                                                    "type": "Identifier",
+                                                    "name": "sourceEvent"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "type": "ExpressionStatement",
+                                              "expression": {
+                                                "type": "AssignmentExpression",
+                                                "operator": "=",
+                                                "left": {
+                                                  "type": "MemberExpression",
+                                                  "computed": false,
+                                                  "object": {
+                                                    "type": "Identifier",
+                                                    "name": "flipper"
+                                                  },
+                                                  "property": {
+                                                    "type": "Identifier",
+                                                    "name": "activeRoute"
+                                                  }
+                                                },
+                                                "right": {
+                                                  "type": "Identifier",
+                                                  "name": "route"
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "scope": [
+                                            "Flipper",
+                                            "Route",
+                                            "_eventPass",
+                                            "_flippers",
+                                            "_getTargetUrl",
+                                            "_makeTapHandler",
+                                            "_urlToPageName",
+                                            "_whenOk",
+                                            "activated",
+                                            "activationPromises",
+                                            "convertedUrls",
+                                            "flip",
+                                            "flipper",
+                                            "promises",
+                                            "reLeadingDot",
+                                            "reLeadingHash",
+                                            "reTrailingExtension",
+                                            "reValidAttr",
+                                            "route",
+                                            "sourceEvent"
+                                          ]
+                                        },
+                                        "scope": [
+                                          "Flipper",
+                                          "Route",
+                                          "_eventPass",
+                                          "_flippers",
+                                          "_getTargetUrl",
+                                          "_makeTapHandler",
+                                          "_urlToPageName",
+                                          "_whenOk",
+                                          "activated",
+                                          "activationPromises",
+                                          "convertedUrls",
+                                          "flip",
+                                          "flipper",
+                                          "promises",
+                                          "reLeadingDot",
+                                          "reLeadingHash",
+                                          "reTrailingExtension",
+                                          "reValidAttr",
+                                          "route",
+                                          "sourceEvent"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ],
+                              "scope": [
+                                "Flipper",
+                                "Route",
+                                "_eventPass",
+                                "_flippers",
+                                "_getTargetUrl",
+                                "_makeTapHandler",
+                                "_urlToPageName",
+                                "_whenOk",
+                                "activated",
+                                "activationPromises",
+                                "convertedUrls",
+                                "flip",
+                                "flipper",
+                                "promises",
+                                "reLeadingDot",
+                                "reLeadingHash",
+                                "reTrailingExtension",
+                                "reValidAttr",
+                                "route",
+                                "sourceEvent"
+                              ]
+                            },
+                            "scope": [
+                              "Flipper",
+                              "Route",
+                              "_eventPass",
+                              "_flippers",
+                              "_getTargetUrl",
+                              "_makeTapHandler",
+                              "_urlToPageName",
+                              "_whenOk",
+                              "activated",
+                              "activationPromises",
+                              "convertedUrls",
+                              "flip",
+                              "flipper",
+                              "promises",
+                              "reLeadingDot",
+                              "reLeadingHash",
+                              "reTrailingExtension",
+                              "reValidAttr",
+                              "route",
+                              "sourceEvent"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "activated",
+                    "activationPromises",
+                    "convertedUrls",
+                    "flip",
+                    "flipper",
+                    "promises",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr",
+                    "route",
+                    "sourceEvent"
+                  ]
+                },
+                "alternate": null
+              }
+            ],
+            "scope": [
+              "Flipper",
+              "Route",
+              "_eventPass",
+              "_flippers",
+              "_getTargetUrl",
+              "_makeTapHandler",
+              "_urlToPageName",
+              "_whenOk",
+              "activated",
+              "activationPromises",
+              "convertedUrls",
+              "flip",
+              "flipper",
+              "promises",
+              "reLeadingDot",
+              "reLeadingHash",
+              "reTrailingExtension",
+              "reValidAttr",
+              "route",
+              "sourceEvent"
+            ]
+          },
+          "scope": [
+            "Flipper",
+            "Route",
+            "_eventPass",
+            "_flippers",
+            "_getTargetUrl",
+            "_makeTapHandler",
+            "_urlToPageName",
+            "_whenOk",
+            "convertedUrls",
+            "flip",
+            "promises",
+            "reLeadingDot",
+            "reLeadingHash",
+            "reTrailingExtension",
+            "reValidAttr",
+            "route",
+            "sourceEvent"
+          ]
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "Flipper"
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "prototype"
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "findRoute"
+          }
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [
+            {
+              "type": "Identifier",
+              "name": "url"
+            }
+          ],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "ForStatement",
+                "init": {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "ii"
+                      },
+                      "init": {
+                        "type": "Literal",
+                        "value": 0
+                      }
+                    }
+                  ],
+                  "kind": "var"
+                },
+                "test": {
+                  "type": "BinaryExpression",
+                  "operator": "<",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "ii"
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "routes"
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "length"
+                    }
+                  }
+                },
+                "update": {
+                  "type": "UpdateExpression",
+                  "operator": "++",
+                  "argument": {
+                    "type": "Identifier",
+                    "name": "ii"
+                  },
+                  "prefix": false
+                },
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "IfStatement",
+                      "test": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "ThisExpression"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "routes"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "ii"
+                              }
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "regex"
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "test"
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "url"
+                          }
+                        ]
+                      },
+                      "consequent": {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ReturnStatement",
+                            "argument": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "ThisExpression"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "routes"
+                                }
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "ii"
+                              }
+                            }
+                          }
+                        ],
+                        "scope": [
+                          "Flipper",
+                          "Route",
+                          "_eventPass",
+                          "_flippers",
+                          "_getTargetUrl",
+                          "_makeTapHandler",
+                          "_urlToPageName",
+                          "_whenOk",
+                          "convertedUrls",
+                          "flip",
+                          "ii",
+                          "reLeadingDot",
+                          "reLeadingHash",
+                          "reTrailingExtension",
+                          "reValidAttr",
+                          "url"
+                        ]
+                      },
+                      "alternate": null
+                    }
+                  ],
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "convertedUrls",
+                    "flip",
+                    "ii",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr",
+                    "url"
+                  ]
+                }
+              },
+              {
+                "type": "ReturnStatement",
+                "argument": {
+                  "type": "Identifier",
+                  "name": "undefined"
+                }
+              }
+            ],
+            "scope": [
+              "Flipper",
+              "Route",
+              "_eventPass",
+              "_flippers",
+              "_getTargetUrl",
+              "_makeTapHandler",
+              "_urlToPageName",
+              "_whenOk",
+              "convertedUrls",
+              "flip",
+              "ii",
+              "reLeadingDot",
+              "reLeadingHash",
+              "reTrailingExtension",
+              "reValidAttr",
+              "url"
+            ]
+          },
+          "scope": [
+            "Flipper",
+            "Route",
+            "_eventPass",
+            "_flippers",
+            "_getTargetUrl",
+            "_makeTapHandler",
+            "_urlToPageName",
+            "_whenOk",
+            "convertedUrls",
+            "flip",
+            "reLeadingDot",
+            "reLeadingHash",
+            "reTrailingExtension",
+            "reValidAttr",
+            "url"
+          ]
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "Flipper"
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "prototype"
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "init"
+          }
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "VariableDeclaration",
+                "declarations": [
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "flipper"
+                    },
+                    "init": {
+                      "type": "ThisExpression"
+                    }
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "key"
+                    },
+                    "init": null
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "elements"
+                    },
+                    "init": null
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "ii"
+                    },
+                    "init": null
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "handleTap"
+                    },
+                    "init": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "Identifier",
+                        "name": "_makeTapHandler"
+                      },
+                      "arguments": [
+                        {
+                          "type": "ThisExpression"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "defaultElement"
+                    },
+                    "init": null
+                  }
+                ],
+                "kind": "var"
+              },
+              {
+                "type": "IfStatement",
+                "test": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "ThisExpression"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "element"
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "id"
+                  }
+                },
+                "consequent": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ForInStatement",
+                      "left": {
+                        "type": "Identifier",
+                        "name": "key"
+                      },
+                      "right": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "events"
+                        }
+                      },
+                      "body": {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "AssignmentExpression",
+                              "operator": "+=",
+                              "left": {
+                                "type": "MemberExpression",
+                                "computed": true,
+                                "object": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "ThisExpression"
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "events"
+                                  }
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "key"
+                                }
+                              },
+                              "right": {
+                                "type": "BinaryExpression",
+                                "operator": "+",
+                                "left": {
+                                  "type": "Literal",
+                                  "value": "."
+                                },
+                                "right": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "ThisExpression"
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "element"
+                                    }
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "id"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "scope": [
+                          "Flipper",
+                          "Route",
+                          "_eventPass",
+                          "_flippers",
+                          "_getTargetUrl",
+                          "_makeTapHandler",
+                          "_urlToPageName",
+                          "_whenOk",
+                          "convertedUrls",
+                          "defaultElement",
+                          "elements",
+                          "flip",
+                          "flipper",
+                          "handleTap",
+                          "ii",
+                          "key",
+                          "reLeadingDot",
+                          "reLeadingHash",
+                          "reTrailingExtension",
+                          "reValidAttr"
+                        ]
+                      },
+                      "each": false
+                    }
+                  ],
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "convertedUrls",
+                    "defaultElement",
+                    "elements",
+                    "flip",
+                    "flipper",
+                    "handleTap",
+                    "ii",
+                    "key",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr"
+                  ]
+                },
+                "alternate": null
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "classtweak"
+                  },
+                  "arguments": [
+                    {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "element"
+                      }
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "+flipper"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "AssignmentExpression",
+                  "operator": "=",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "elements"
+                  },
+                  "right": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "qsa"
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "*[data-route]"
+                      },
+                      {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "element"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "ForStatement",
+                "init": {
+                  "type": "AssignmentExpression",
+                  "operator": "=",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "ii"
+                  },
+                  "right": {
+                    "type": "Literal",
+                    "value": 0
+                  }
+                },
+                "test": {
+                  "type": "BinaryExpression",
+                  "operator": "<",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "ii"
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "elements"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "length"
+                    }
+                  }
+                },
+                "update": {
+                  "type": "UpdateExpression",
+                  "operator": "++",
+                  "argument": {
+                    "type": "Identifier",
+                    "name": "ii"
+                  },
+                  "prefix": false
+                },
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "routes"
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "push"
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "NewExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "Route"
+                            },
+                            "arguments": [
+                              {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "MemberExpression",
+                                    "computed": true,
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "elements"
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "ii"
+                                    }
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "getAttribute"
+                                  }
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Literal",
+                                    "value": "data-route"
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "ThisExpression"
+                              },
+                              {
+                                "type": "MemberExpression",
+                                "computed": true,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "elements"
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "ii"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "convertedUrls",
+                    "defaultElement",
+                    "elements",
+                    "flip",
+                    "flipper",
+                    "handleTap",
+                    "ii",
+                    "key",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr"
+                  ]
+                }
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "element"
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "addEventListener"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "touchstart"
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "handleTap"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": false
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "element"
+                      }
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "addEventListener"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "click"
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "handleTap"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": false
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "AssignmentExpression",
+                  "operator": "=",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "defaultElement"
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": true,
+                    "object": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "Identifier",
+                            "name": "qsa"
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": ".flip-active"
+                            },
+                            {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "element"
+                              }
+                            }
+                          ]
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "concat"
+                        }
+                      },
+                      "arguments": [
+                        {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "Identifier",
+                            "name": "qsa"
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": "[data-route=\"/\"]"
+                            },
+                            {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "element"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "Identifier",
+                            "name": "qsa"
+                          },
+                          "arguments": [
+                            {
+                              "type": "Literal",
+                              "value": "section, .section"
+                            },
+                            {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "element"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "property": {
+                      "type": "Literal",
+                      "value": 0
+                    }
+                  }
+                }
+              },
+              {
+                "type": "IfStatement",
+                "test": {
+                  "type": "Identifier",
+                  "name": "defaultElement"
+                },
+                "consequent": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarations": [
+                        {
+                          "type": "VariableDeclarator",
+                          "id": {
+                            "type": "Identifier",
+                            "name": "route"
+                          },
+                          "init": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "defaultElement"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "getAttribute"
+                              }
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "data-route"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "kind": "var"
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression"
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "defaultRoute"
+                          }
+                        },
+                        "right": {
+                          "type": "ConditionalExpression",
+                          "test": {
+                            "type": "Identifier",
+                            "name": "route"
+                          },
+                          "consequent": {
+                            "type": "NewExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "Route"
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "name": "route"
+                              },
+                              {
+                                "type": "ThisExpression"
+                              },
+                              {
+                                "type": "Identifier",
+                                "name": "defaultElement"
+                              }
+                            ]
+                          },
+                          "alternate": {
+                            "type": "Literal",
+                            "value": null
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "convertedUrls",
+                    "defaultElement",
+                    "elements",
+                    "flip",
+                    "flipper",
+                    "handleTap",
+                    "ii",
+                    "key",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr",
+                    "route"
+                  ]
+                },
+                "alternate": null
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "eve"
+                  },
+                  "arguments": [
+                    {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "events"
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "init"
+                      }
+                    },
+                    {
+                      "type": "ThisExpression"
+                    },
+                    {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "element"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "ThisExpression"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "activate"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "defaultRoute"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "setTimeout"
+                  },
+                  "arguments": [
+                    {
+                      "type": "FunctionExpression",
+                      "id": null,
+                      "params": [],
+                      "body": {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "Identifier",
+                                "name": "classtweak"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "flipper"
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "element"
+                                  }
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": "+flip-ready"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "scope": [
+                          "Flipper",
+                          "Route",
+                          "_eventPass",
+                          "_flippers",
+                          "_getTargetUrl",
+                          "_makeTapHandler",
+                          "_urlToPageName",
+                          "_whenOk",
+                          "convertedUrls",
+                          "defaultElement",
+                          "elements",
+                          "flip",
+                          "flipper",
+                          "handleTap",
+                          "ii",
+                          "key",
+                          "reLeadingDot",
+                          "reLeadingHash",
+                          "reTrailingExtension",
+                          "reValidAttr"
+                        ]
+                      },
+                      "scope": [
+                        "Flipper",
+                        "Route",
+                        "_eventPass",
+                        "_flippers",
+                        "_getTargetUrl",
+                        "_makeTapHandler",
+                        "_urlToPageName",
+                        "_whenOk",
+                        "convertedUrls",
+                        "defaultElement",
+                        "elements",
+                        "flip",
+                        "flipper",
+                        "handleTap",
+                        "ii",
+                        "key",
+                        "reLeadingDot",
+                        "reLeadingHash",
+                        "reTrailingExtension",
+                        "reValidAttr"
+                      ]
+                    },
+                    {
+                      "type": "Literal",
+                      "value": 10
+                    }
+                  ]
+                }
+              }
+            ],
+            "scope": [
+              "Flipper",
+              "Route",
+              "_eventPass",
+              "_flippers",
+              "_getTargetUrl",
+              "_makeTapHandler",
+              "_urlToPageName",
+              "_whenOk",
+              "convertedUrls",
+              "defaultElement",
+              "elements",
+              "flip",
+              "flipper",
+              "handleTap",
+              "ii",
+              "key",
+              "reLeadingDot",
+              "reLeadingHash",
+              "reTrailingExtension",
+              "reValidAttr"
+            ]
+          },
+          "scope": [
+            "Flipper",
+            "Route",
+            "_eventPass",
+            "_flippers",
+            "_getTargetUrl",
+            "_makeTapHandler",
+            "_urlToPageName",
+            "_whenOk",
+            "convertedUrls",
+            "flip",
+            "reLeadingDot",
+            "reLeadingHash",
+            "reTrailingExtension",
+            "reValidAttr"
+          ]
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "Flipper"
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "prototype"
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "isRoute"
+          }
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [
+            {
+              "type": "Identifier",
+              "name": "target"
+            },
+            {
+              "type": "Identifier",
+              "name": "sourceEvent"
+            }
+          ],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "VariableDeclaration",
+                "declarations": [
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "valid"
+                    },
+                    "init": {
+                      "type": "Literal",
+                      "value": false
+                    }
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "path"
+                    },
+                    "init": null
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "routeResults"
+                    },
+                    "init": null
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "eventName"
+                    },
+                    "init": null
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "route"
+                    },
+                    "init": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression"
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "activeRoute"
+                      }
+                    }
+                  },
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "promises"
+                    },
+                    "init": {
+                      "type": "ArrayExpression",
+                      "elements": []
+                    }
+                  }
+                ],
+                "kind": "var"
+              },
+              {
+                "type": "IfStatement",
+                "test": {
+                  "type": "LogicalExpression",
+                  "operator": "&&",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "target"
+                  },
+                  "right": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "target"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "href"
+                    }
+                  }
+                },
+                "consequent": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "Identifier",
+                          "name": "path"
+                        },
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "Identifier",
+                            "name": "_getTargetUrl"
+                          },
+                          "arguments": [
+                            {
+                              "type": "Identifier",
+                              "name": "target"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "Identifier",
+                          "name": "eventName"
+                        },
+                        "right": {
+                          "type": "BinaryExpression",
+                          "operator": "+",
+                          "left": {
+                            "type": "BinaryExpression",
+                            "operator": "+",
+                            "left": {
+                              "type": "BinaryExpression",
+                              "operator": "+",
+                              "left": {
+                                "type": "Literal",
+                                "value": "flip.to."
+                              },
+                              "right": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "Identifier",
+                                  "name": "_urlToPageName"
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Identifier",
+                                    "name": "path"
+                                  }
+                                ]
+                              }
+                            },
+                            "right": {
+                              "type": "Literal",
+                              "value": "."
+                            }
+                          },
+                          "right": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression"
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "id"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "Identifier",
+                          "name": "valid"
+                        },
+                        "right": {
+                          "type": "LogicalExpression",
+                          "operator": "&&",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "route"
+                          },
+                          "right": {
+                            "type": "BinaryExpression",
+                            "operator": "===",
+                            "left": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "route"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "path"
+                              }
+                            },
+                            "right": {
+                              "type": "Identifier",
+                              "name": "path"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "IfStatement",
+                      "test": {
+                        "type": "UnaryExpression",
+                        "operator": "!",
+                        "argument": {
+                          "type": "Identifier",
+                          "name": "valid"
+                        }
+                      },
+                      "consequent": {
+                        "type": "BlockStatement",
+                        "body": [
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "AssignmentExpression",
+                              "operator": "=",
+                              "left": {
+                                "type": "Identifier",
+                                "name": "route"
+                              },
+                              "right": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "ThisExpression"
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "findRoute"
+                                  }
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Identifier",
+                                    "name": "path"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "AssignmentExpression",
+                              "operator": "=",
+                              "left": {
+                                "type": "Identifier",
+                                "name": "routeResults"
+                              },
+                              "right": {
+                                "type": "ConditionalExpression",
+                                "test": {
+                                  "type": "Identifier",
+                                  "name": "route"
+                                },
+                                "consequent": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "Identifier",
+                                    "name": "eve"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Identifier",
+                                      "name": "eventName"
+                                    },
+                                    {
+                                      "type": "ThisExpression"
+                                    },
+                                    {
+                                      "type": "Identifier",
+                                      "name": "route"
+                                    },
+                                    {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression"
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "activeRoute"
+                                      }
+                                    },
+                                    {
+                                      "type": "Identifier",
+                                      "name": "sourceEvent"
+                                    }
+                                  ]
+                                },
+                                "alternate": {
+                                  "type": "Literal",
+                                  "value": null
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "type": "ExpressionStatement",
+                            "expression": {
+                              "type": "AssignmentExpression",
+                              "operator": "=",
+                              "left": {
+                                "type": "Identifier",
+                                "name": "valid"
+                              },
+                              "right": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "Identifier",
+                                  "name": "_eventPass"
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Identifier",
+                                    "name": "routeResults"
+                                  },
+                                  {
+                                    "type": "Identifier",
+                                    "name": "promises"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "scope": [
+                          "Flipper",
+                          "Route",
+                          "_eventPass",
+                          "_flippers",
+                          "_getTargetUrl",
+                          "_makeTapHandler",
+                          "_urlToPageName",
+                          "_whenOk",
+                          "convertedUrls",
+                          "eventName",
+                          "flip",
+                          "path",
+                          "promises",
+                          "reLeadingDot",
+                          "reLeadingHash",
+                          "reTrailingExtension",
+                          "reValidAttr",
+                          "route",
+                          "routeResults",
+                          "sourceEvent",
+                          "target",
+                          "valid"
+                        ]
+                      },
+                      "alternate": null
+                    }
+                  ],
+                  "scope": [
+                    "Flipper",
+                    "Route",
+                    "_eventPass",
+                    "_flippers",
+                    "_getTargetUrl",
+                    "_makeTapHandler",
+                    "_urlToPageName",
+                    "_whenOk",
+                    "convertedUrls",
+                    "eventName",
+                    "flip",
+                    "path",
+                    "promises",
+                    "reLeadingDot",
+                    "reLeadingHash",
+                    "reTrailingExtension",
+                    "reValidAttr",
+                    "route",
+                    "routeResults",
+                    "sourceEvent",
+                    "target",
+                    "valid"
+                  ]
+                },
+                "alternate": null
+              },
+              {
+                "type": "ReturnStatement",
+                "argument": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "valid"
+                      },
+                      "value": {
+                        "type": "Identifier",
+                        "name": "valid"
+                      },
+                      "kind": "init"
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "route"
+                      },
+                      "value": {
+                        "type": "Identifier",
+                        "name": "route"
+                      },
+                      "kind": "init"
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "promises"
+                      },
+                      "value": {
+                        "type": "Identifier",
+                        "name": "promises"
+                      },
+                      "kind": "init"
+                    }
+                  ]
+                }
+              }
+            ],
+            "scope": [
+              "Flipper",
+              "Route",
+              "_eventPass",
+              "_flippers",
+              "_getTargetUrl",
+              "_makeTapHandler",
+              "_urlToPageName",
+              "_whenOk",
+              "convertedUrls",
+              "eventName",
+              "flip",
+              "path",
+              "promises",
+              "reLeadingDot",
+              "reLeadingHash",
+              "reTrailingExtension",
+              "reValidAttr",
+              "route",
+              "routeResults",
+              "sourceEvent",
+              "target",
+              "valid"
+            ]
+          },
+          "scope": [
+            "Flipper",
+            "Route",
+            "_eventPass",
+            "_flippers",
+            "_getTargetUrl",
+            "_makeTapHandler",
+            "_urlToPageName",
+            "_whenOk",
+            "convertedUrls",
+            "flip",
+            "reLeadingDot",
+            "reLeadingHash",
+            "reTrailingExtension",
+            "reValidAttr",
+            "sourceEvent",
+            "target"
+          ]
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "Flipper"
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "prototype"
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "on"
+          }
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [
+            {
+              "type": "Identifier",
+              "name": "evtName"
+            },
+            {
+              "type": "Identifier",
+              "name": "handler"
+            }
+          ],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "ExpressionStatement",
+                "expression": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "eve"
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "on"
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "BinaryExpression",
+                      "operator": "+",
+                      "left": {
+                        "type": "BinaryExpression",
+                        "operator": "+",
+                        "left": {
+                          "type": "Identifier",
+                          "name": "evtName"
+                        },
+                        "right": {
+                          "type": "Literal",
+                          "value": "."
+                        }
+                      },
+                      "right": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression"
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "id"
+                        }
+                      }
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "handler"
+                    }
+                  ]
+                }
+              }
+            ],
+            "scope": [
+              "Flipper",
+              "Route",
+              "_eventPass",
+              "_flippers",
+              "_getTargetUrl",
+              "_makeTapHandler",
+              "_urlToPageName",
+              "_whenOk",
+              "convertedUrls",
+              "evtName",
+              "flip",
+              "handler",
+              "reLeadingDot",
+              "reLeadingHash",
+              "reTrailingExtension",
+              "reValidAttr"
+            ]
+          },
+          "scope": [
+            "Flipper",
+            "Route",
+            "_eventPass",
+            "_flippers",
+            "_getTargetUrl",
+            "_makeTapHandler",
+            "_urlToPageName",
+            "_whenOk",
+            "convertedUrls",
+            "evtName",
+            "flip",
+            "handler",
+            "reLeadingDot",
+            "reLeadingHash",
+            "reTrailingExtension",
+            "reValidAttr"
+          ]
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "flip"
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "element"
+        },
+        {
+          "type": "Identifier",
+          "name": "opts"
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "flipper"
+                },
+                "init": {
+                  "type": "NewExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "Flipper"
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "name": "element"
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "opts"
+                    }
+                  ]
+                }
+              }
+            ],
+            "kind": "var"
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": true,
+                "object": {
+                  "type": "Identifier",
+                  "name": "_flippers"
+                },
+                "property": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "flipper"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "id"
+                  }
+                }
+              },
+              "right": {
+                "type": "Identifier",
+                "name": "flipper"
+              }
+            }
+          },
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "Identifier",
+              "name": "flipper"
+            }
+          }
+        ],
+        "scope": [
+          "Flipper",
+          "Route",
+          "_eventPass",
+          "_flippers",
+          "_getTargetUrl",
+          "_makeTapHandler",
+          "_urlToPageName",
+          "_whenOk",
+          "convertedUrls",
+          "element",
+          "flip",
+          "flipper",
+          "opts",
+          "reLeadingDot",
+          "reLeadingHash",
+          "reTrailingExtension",
+          "reValidAttr"
+        ]
+      },
+      "scope": [
+        "Flipper",
+        "Route",
+        "_eventPass",
+        "_flippers",
+        "_getTargetUrl",
+        "_makeTapHandler",
+        "_urlToPageName",
+        "_whenOk",
+        "convertedUrls",
+        "element",
+        "flip",
+        "opts",
+        "reLeadingDot",
+        "reLeadingHash",
+        "reTrailingExtension",
+        "reValidAttr"
+      ]
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "flip"
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "get"
+          }
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [
+            {
+              "type": "Identifier",
+              "name": "id"
+            }
+          ],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "ReturnStatement",
+                "argument": {
+                  "type": "MemberExpression",
+                  "computed": true,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "_flippers"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "id"
+                  }
+                }
+              }
+            ],
+            "scope": [
+              "Flipper",
+              "Route",
+              "_eventPass",
+              "_flippers",
+              "_getTargetUrl",
+              "_makeTapHandler",
+              "_urlToPageName",
+              "_whenOk",
+              "convertedUrls",
+              "flip",
+              "id",
+              "reLeadingDot",
+              "reLeadingHash",
+              "reTrailingExtension",
+              "reValidAttr"
+            ]
+          },
+          "scope": [
+            "Flipper",
+            "Route",
+            "_eventPass",
+            "_flippers",
+            "_getTargetUrl",
+            "_makeTapHandler",
+            "_urlToPageName",
+            "_whenOk",
+            "convertedUrls",
+            "flip",
+            "id",
+            "reLeadingDot",
+            "reLeadingHash",
+            "reTrailingExtension",
+            "reValidAttr"
+          ]
+        }
+      }
+    }
+  ],
+  "scope": [
+    "Flipper",
+    "Route",
+    "_eventPass",
+    "_flippers",
+    "_getTargetUrl",
+    "_makeTapHandler",
+    "_urlToPageName",
+    "_whenOk",
+    "convertedUrls",
+    "flip",
+    "reLeadingDot",
+    "reLeadingHash",
+    "reTrailingExtension",
+    "reValidAttr"
+  ]
+}
