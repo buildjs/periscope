@@ -17,6 +17,7 @@
           "name": "a2"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -46,6 +47,9 @@
           "b"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "a",
         "a1",
@@ -69,6 +73,7 @@
           "name": "b2"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -98,6 +103,9 @@
           "bonly"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "a",
         "b",

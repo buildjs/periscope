@@ -95,6 +95,7 @@
           "name": "promises"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -358,6 +359,9 @@
           "valid"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -389,6 +393,7 @@
           "name": "target"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -443,6 +448,9 @@
           "target"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -473,6 +481,7 @@
           "name": "url"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -638,6 +647,9 @@
           "url"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -668,6 +680,7 @@
           "name": "flipper"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -682,6 +695,7 @@
                   "name": "evt"
                 }
               ],
+              "defaults": [],
               "body": {
                 "type": "BlockStatement",
                 "body": [
@@ -979,6 +993,9 @@
                   "target"
                 ]
               },
+              "rest": null,
+              "generator": false,
+              "expression": false,
               "scope": [
                 "Flipper",
                 "Route",
@@ -1018,6 +1035,9 @@
           "reValidAttr"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -1060,6 +1080,7 @@
           "name": "errback"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -1426,6 +1447,9 @@
           "reValidAttr"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -1467,6 +1491,7 @@
           "name": "element"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -2067,6 +2092,7 @@
                   "type": "FunctionExpression",
                   "id": null,
                   "params": [],
+                  "defaults": [],
                   "body": {
                     "type": "BlockStatement",
                     "body": [
@@ -2101,6 +2127,9 @@
                       "url"
                     ]
                   },
+                  "rest": null,
+                  "generator": false,
+                  "expression": false,
                   "scope": [
                     "Flipper",
                     "Route",
@@ -2151,6 +2180,9 @@
           "url"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -2187,6 +2219,7 @@
           "name": "opts"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -2642,6 +2675,9 @@
           "reValidAttr"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -2703,6 +2739,7 @@
               "name": "sourceEvent"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -2893,6 +2930,7 @@
                             "type": "FunctionExpression",
                             "id": null,
                             "params": [],
+                            "defaults": [],
                             "body": {
                               "type": "BlockStatement",
                               "body": [
@@ -3052,6 +3090,7 @@
                                         "type": "FunctionExpression",
                                         "id": null,
                                         "params": [],
+                                        "defaults": [],
                                         "body": {
                                           "type": "BlockStatement",
                                           "body": [
@@ -3186,6 +3225,9 @@
                                             "sourceEvent"
                                           ]
                                         },
+                                        "rest": null,
+                                        "generator": false,
+                                        "expression": false,
                                         "scope": [
                                           "Flipper",
                                           "Route",
@@ -3236,6 +3278,9 @@
                                 "sourceEvent"
                               ]
                             },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
                             "scope": [
                               "Flipper",
                               "Route",
@@ -3312,6 +3357,9 @@
               "sourceEvent"
             ]
           },
+          "rest": null,
+          "generator": false,
+          "expression": false,
           "scope": [
             "Flipper",
             "Route",
@@ -3368,6 +3416,7 @@
               "name": "url"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -3570,6 +3619,9 @@
               "url"
             ]
           },
+          "rest": null,
+          "generator": false,
+          "expression": false,
           "scope": [
             "Flipper",
             "Route",
@@ -3619,6 +3671,7 @@
           "type": "FunctionExpression",
           "id": null,
           "params": [],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -4440,6 +4493,7 @@
                       "type": "FunctionExpression",
                       "id": null,
                       "params": [],
+                      "defaults": [],
                       "body": {
                         "type": "BlockStatement",
                         "body": [
@@ -4495,6 +4549,9 @@
                           "reValidAttr"
                         ]
                       },
+                      "rest": null,
+                      "generator": false,
+                      "expression": false,
                       "scope": [
                         "Flipper",
                         "Route",
@@ -4549,6 +4606,9 @@
               "reValidAttr"
             ]
           },
+          "rest": null,
+          "generator": false,
+          "expression": false,
           "scope": [
             "Flipper",
             "Route",
@@ -4606,6 +4666,7 @@
               "name": "sourceEvent"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -5077,6 +5138,9 @@
               "valid"
             ]
           },
+          "rest": null,
+          "generator": false,
+          "expression": false,
           "scope": [
             "Flipper",
             "Route",
@@ -5136,6 +5200,7 @@
               "name": "handler"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -5210,6 +5275,9 @@
               "reValidAttr"
             ]
           },
+          "rest": null,
+          "generator": false,
+          "expression": false,
           "scope": [
             "Flipper",
             "Route",
@@ -5247,6 +5315,7 @@
           "name": "opts"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -5339,6 +5408,9 @@
           "reValidAttr"
         ]
       },
+      "rest": null,
+      "generator": false,
+      "expression": false,
       "scope": [
         "Flipper",
         "Route",
@@ -5384,6 +5456,7 @@
               "name": "id"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -5421,6 +5494,9 @@
               "reValidAttr"
             ]
           },
+          "rest": null,
+          "generator": false,
+          "expression": false,
           "scope": [
             "Flipper",
             "Route",

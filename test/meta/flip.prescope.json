@@ -95,6 +95,7 @@
           "name": "promises"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -297,7 +298,10 @@
             }
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "FunctionDeclaration",
@@ -311,6 +315,7 @@
           "name": "target"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -347,7 +352,10 @@
             }
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "FunctionDeclaration",
@@ -361,6 +369,7 @@
           "name": "url"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -491,7 +500,10 @@
             }
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "FunctionDeclaration",
@@ -505,6 +517,7 @@
           "name": "flipper"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -519,6 +532,7 @@
                   "name": "evt"
                 }
               ],
+              "defaults": [],
               "body": {
                 "type": "BlockStatement",
                 "body": [
@@ -755,11 +769,17 @@
                     "alternate": null
                   }
                 ]
-              }
+              },
+              "rest": null,
+              "generator": false,
+              "expression": false
             }
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "FunctionDeclaration",
@@ -785,6 +805,7 @@
           "name": "errback"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -1062,7 +1083,10 @@
             "alternate": null
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "FunctionDeclaration",
@@ -1084,6 +1108,7 @@
           "name": "element"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -1574,6 +1599,7 @@
                   "type": "FunctionExpression",
                   "id": null,
                   "params": [],
+                  "defaults": [],
                   "body": {
                     "type": "BlockStatement",
                     "body": [
@@ -1585,13 +1611,19 @@
                         }
                       }
                     ]
-                  }
+                  },
+                  "rest": null,
+                  "generator": false,
+                  "expression": false
                 }
               ]
             }
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "FunctionDeclaration",
@@ -1609,6 +1641,7 @@
           "name": "opts"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -2027,7 +2060,10 @@
             }
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "ExpressionStatement",
@@ -2071,6 +2107,7 @@
               "name": "sourceEvent"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -2239,6 +2276,7 @@
                             "type": "FunctionExpression",
                             "id": null,
                             "params": [],
+                            "defaults": [],
                             "body": {
                               "type": "BlockStatement",
                               "body": [
@@ -2398,6 +2436,7 @@
                                         "type": "FunctionExpression",
                                         "id": null,
                                         "params": [],
+                                        "defaults": [],
                                         "body": {
                                           "type": "BlockStatement",
                                           "body": [
@@ -2509,13 +2548,19 @@
                                               }
                                             }
                                           ]
-                                        }
+                                        },
+                                        "rest": null,
+                                        "generator": false,
+                                        "expression": false
                                       }
                                     ]
                                   }
                                 }
                               ]
-                            }
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false
                           }
                         ]
                       }
@@ -2525,7 +2570,10 @@
                 "alternate": null
               }
             ]
-          }
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false
         }
       }
     },
@@ -2563,6 +2611,7 @@
               "name": "url"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -2710,7 +2759,10 @@
                 }
               }
             ]
-          }
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false
         }
       }
     },
@@ -2743,6 +2795,7 @@
           "type": "FunctionExpression",
           "id": null,
           "params": [],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -3475,6 +3528,7 @@
                       "type": "FunctionExpression",
                       "id": null,
                       "params": [],
+                      "defaults": [],
                       "body": {
                         "type": "BlockStatement",
                         "body": [
@@ -3507,7 +3561,10 @@
                             }
                           }
                         ]
-                      }
+                      },
+                      "rest": null,
+                      "generator": false,
+                      "expression": false
                     },
                     {
                       "type": "Literal",
@@ -3517,7 +3574,10 @@
                 }
               }
             ]
-          }
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false
         }
       }
     },
@@ -3559,6 +3619,7 @@
               "name": "sourceEvent"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -3957,7 +4018,10 @@
                 }
               }
             ]
-          }
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false
         }
       }
     },
@@ -3999,6 +4063,7 @@
               "name": "handler"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -4054,7 +4119,10 @@
                 }
               }
             ]
-          }
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false
         }
       }
     },
@@ -4074,6 +4142,7 @@
           "name": "opts"
         }
       ],
+      "defaults": [],
       "body": {
         "type": "BlockStatement",
         "body": [
@@ -4146,7 +4215,10 @@
             }
           }
         ]
-      }
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false
     },
     {
       "type": "ExpressionStatement",
@@ -4174,6 +4246,7 @@
               "name": "id"
             }
           ],
+          "defaults": [],
           "body": {
             "type": "BlockStatement",
             "body": [
@@ -4193,7 +4266,10 @@
                 }
               }
             ]
-          }
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false
         }
       }
     }
