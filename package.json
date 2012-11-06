@@ -2,21 +2,21 @@
   "name": "periscope",
   "description": "Scope Analysis for Esprima",
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "tags": [ "esprima", "code", "reflection" ],
-  "version": "0.0.0",
+  "tags": [
+    "esprima",
+    "code",
+    "reflection"
+  ],
+  "version": "0.1.0",
   "engines": {
     "node": "*"
   },
-  
-  "dependencies": {
-  },
-
+  "dependencies": {},
   "devDependencies": {
     "expect.js": "0.1.x",
     "mocha": "1.6.x",
     "esprima": "1.0.x"
   },
-
   "repository": {
     "type": "git",
     "url": "git://github.com/DamonOehlman/periscope.git"
@@ -24,8 +24,8 @@
   "bugs": {
     "url": "http://github.com/DamonOehlman/periscope/issues"
   },
-  
-  "scripts": { "test": "mocha --reporter spec" },
-  
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
   "contributors": []
 }

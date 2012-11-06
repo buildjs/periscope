@@ -1,0 +1,15 @@
+{
+  "name": "periscope",
+  "repo": "buildjs/periscope",
+  "description": "Variable Scope Analysis of an Esprima Parser generated AST",
+  "version": "0.1.0",
+  "tags": [
+    "esprima",
+    "code",
+    "reflection"
+  ],
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
